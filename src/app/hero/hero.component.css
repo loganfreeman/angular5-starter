@@ -1,3 +1,19 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper > div {
+  flex:1 1 auto;
+  border:1px red solid;
+  text-align:center;
+
+  margin:5px;  /* and that, will result in a 10px gap */
+}
+.hero-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -17,6 +33,7 @@
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  display: flex;
 }
 .heroes li.selected:hover {
   background-color: #BBD8DC !important;
@@ -39,8 +56,6 @@
   background-color: #607D8B;
   line-height: 1em;
   position: relative;
-  left: -1px;
-  top: -4px;
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
