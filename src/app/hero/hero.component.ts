@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hero, HEROES } from '../hero';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
+import { Router }            from '@angular/router';
+
 
 @Component({
   selector: 'app-hero',
@@ -22,7 +24,8 @@ export class HeroComponent implements OnInit {
 
   selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getHeroes();
@@ -57,6 +60,10 @@ export class HeroComponent implements OnInit {
           this.heroes = this.heroes.filter(h => h !== hero);
           if (this.selectedHero === hero) { this.selectedHero = null; }
         });
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
 }
