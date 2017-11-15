@@ -30,6 +30,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 [Routing](https://angular.io/tutorial/toh-pt5)
 
+[Refactor routes to a Routing Module](https://ngdocsdev.firebaseapp.com/docs/ts/latest/tutorial/toh-pt5.html)
+
+
+
+
+
 ## tutorial
 
 [Building An Angular 5 Project with Bootstrap 4 and Firebase](https://medium.com/codingthesmartway-com-blog/building-an-angular-5-project-with-bootstrap-4-and-firebase-4504ff7717c1)
