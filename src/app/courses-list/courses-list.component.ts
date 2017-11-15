@@ -15,7 +15,7 @@ export class CoursesListComponent implements OnInit {
     this.coursesObservable = this.getCourses('/courses');
   }
   getCourses(listPath): Observable<any[]> {
-    let courses: any[] = Object.keys(data.courses).map( key => data.courses[key]);
+    let courses: any[] = Object.keys(data['courses']).map( key => data['courses'][key]);
     return Observable.of(courses);
   }
 }

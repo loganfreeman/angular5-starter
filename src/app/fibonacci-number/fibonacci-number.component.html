@@ -1,0 +1,16 @@
+<div>
+  <div class="form-group">
+    <label for="fibonacci-number">Fibonacci number</label>
+    <input type="number" [(ngModel)]="n" class="form-control" id="fibonacci-number" aria-describedby="nthFibonacciNumberHelp" placeholder="Enter n">
+    <small id="nthFibonacciNumberHelp" class="form-text text-muted">Enter n and then click submit to start calculate the nth Fibonacci number</small>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" (click)="run()">Submit</button>
+</div>
+
+<div>
+  <h2>
+    {{result}}
+  </h2>
+</div>

@@ -29,3 +29,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## routing
 
 [Routing](https://angular.io/tutorial/toh-pt5)
+
+## tutorial
+
+[Building An Angular 5 Project with Bootstrap 4 and Firebase](https://medium.com/codingthesmartway-com-blog/building-an-angular-5-project-with-bootstrap-4-and-firebase-4504ff7717c1)
+
+## Binding
+
+[Angular 5 Interpolation, Property Binding & Event Binding Tutorial](https://coursetro.com/posts/code/108/Angular-5-In)

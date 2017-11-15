@@ -6,18 +6,23 @@ import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { FibonacciNumberComponent } from './fibonacci-number/fibonacci-number.component';
+
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    FibonacciNumberComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
