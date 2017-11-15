@@ -10,6 +10,7 @@ import { FibonacciNumberComponent } from './fibonacci-number/fibonacci-number.co
 
 import { FormsModule } from '@angular/forms';
 import { HeroComponent } from './hero/hero.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HeroComponent } from './hero/hero.component';
     AppNavbarComponent,
     CoursesListComponent,
     FibonacciNumberComponent,
-    HeroComponent
+    HeroComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
