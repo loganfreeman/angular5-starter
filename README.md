@@ -43,3 +43,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Binding
 
 [Angular 5 Interpolation, Property Binding & Event Binding Tutorial](https://coursetro.com/posts/code/108/Angular-5-In)
+
+## Observable
+
+[Becoming more reactive with RxJS flatMap and switchMap](https://medium.com/@w.dave.w/becoming-more-reactive-with-rxjs-flatmap-and-switchmap-ccd3fb7b67fa)
