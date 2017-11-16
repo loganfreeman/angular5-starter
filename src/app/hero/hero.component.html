@@ -14,18 +14,19 @@
 </div>
 
 <div class="wrapper">
-  <div class="left-column">
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
-          [class.selected]="hero === selectedHero">
-        <span class="badge">{{hero.id}}</span>
-        <span>{{hero.name}}</span>
-        <button class="delete"
-          (click)="delete(hero); $event.stopPropagation()">x</button>
-      </li>
-    </ul>
 
-  </div>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" class="hero"
+        [class.selected]="hero === selectedHero">
+      <span class="badge">{{hero.id}}</span>
+      <span>{{hero.name}}</span>
+      <button type="button" class="close" aria-label="Close" (click)="delete(hero); $event.stopPropagation()">
+        <fa name="trash"></fa>
+      </button>
+    </li>
+  </ul>
+
+
 
   <div *ngIf="selectedHero">
     <h2>
