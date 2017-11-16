@@ -18,6 +18,7 @@ import { HeroComponent } from './hero/hero.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 import { HeroService } from './hero.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeroService } from './hero.service';
     CoursesListComponent,
     FibonacciNumberComponent,
     HeroComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,

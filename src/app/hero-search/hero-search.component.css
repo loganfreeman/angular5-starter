@@ -1,0 +1,21 @@
+.search-result{
+  margin-top: 5px;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-result-wrapper {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#search-component {
+  display: flex;
+  flex-direction: column;
+}
