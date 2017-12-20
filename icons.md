@@ -228,3 +228,71 @@ $path/to/dest/wow/
     └── svg-symbols.svg
 ```
 
+Mapping Icon Fonts with Sass
+---
+
+1. SET A SASS VARIABLE FOR FONT-FAMILY OF ICON FONT
+```
+$font-icon: "FontAwesome";
+```
+
+2. SASS @MIXIN FOR ICON FONTS
+```
+// For adding font icons to elements using CSS pseudo-elements
+// http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+@mixin icon($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            // A particular icon has been specified
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            // Supportive icon styles required
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: $font-icon;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
+}
+```
+
+3. MAP UNICODE CHARACTERS TO CUSTOM ALIASES
+
+because typically Font Awesome gives us icon classes with unicode characters, like:
+
+```
+.fa-search / Unicode: f002
+.fa-facebook / Unicode: f09a
+.fa-twitter / Unicode: f099
+```
+and so on…
+
+But now we can create our own mapping, and use any semantic, or non-semantic aliases:
+```
+// Map icon names to font unicode characters
+$icons: (
+    search: "\f002",
+    facebook: "\f09a",
+    twitter: "\f099",
+
+    // or goofy aliases, like
+    magnifying-doohickey: "\f002"
+);
+```
+
+And now we use our mixin to assign our custom magnifying-doohickey icon to our Search, like so:
+```
+[href^="#search-popup"] {
+    @include icon(before, magnifying-doohickey) {
+        color: #b4b4b6;
+        font-size: 24px;
+    }
+}
+```
