@@ -1,31 +1,29 @@
 [How to register and sanitize svg icons globally for use by all components?](https://github.com/angular/material2/issues/2610)
 ---
-Bug, feature request, or proposal:
-Feature request
+## Bug, feature request, or proposal: Feature request
 
-What is the expected behavior?
+- What is the expected behavior?
 
 A way to register and sanitize svg icons globally for use by all components.
 
-What is the current behavior?
-
-Currently following the demo at:
-https://github.com/angular/material2/tree/master/src/demo-app/icon
-
-Each component needs 2 imports:
+- Each component needs 2 imports:
 
 ```
 import {DomSanitizer} from '@angular/platform-browser';
 import {MdIconRegistry} from '@angular/material';
 ```
-and constructor code for each icon:
+
+- and constructor code for each icon:
+
 ```
 constructor(mdIconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     mdIconRegistry.addSvgIcon('icon1',sanitizer.bypassSecurityTrustResourceUrl('assets/icon1.svg'));
     mdIconRegistry.addSvgIcon('icon2',sanitizer.bypassSecurityTrustResourceUrl('assets/icon2.svg'));
 }
 ```
-example code
+
+#### example code
+
 ```
 import {Component, ViewEncapsulation} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -90,8 +88,11 @@ Font Awesome gives you scalable vector icons that can instantly be customized â€
 
 Create a new project and navigate into the project...
 
+```
 ng new my-app
 cd my-app
+```
+
 Install the font-awesome library and add the dependency to package.json...
 
 ```
@@ -126,4 +127,61 @@ In styles.scss add the following:
 ```
 @import 'variables';
 @import '../node_modules/font-awesome/scss/font-awesome';
+```
+
+How to use Material Design Icons In Angular 4?
+---
+1. Download mdi.svg from [here](https://materialdesignicons.com/getting-started) under Angular Material section and place it under your assets folder: 
+2. In your app.module.ts, add the following lines:
+
+```
+import {MdIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
+...
+export class AppModule {
+    constructor(private mdIconRegistry: MdIconRegistry, private domSanitizer: DomSanitizer){
+        mdIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityResourceUrl('/assets/mdi.svg'));
+    }
+}
+```
+3. Make sure to include assets folder under .angular-cli.json in assets (Although by default, it will be there):
+```
+{
+     "apps": [
+         {
+              ...
+              "assets": [
+                  "assets"
+              ]
+         }
+     ]
+}
+```
+4. finally use the mat-icon directive
+```
+<!-- Icon by itself -->
+<mat-icon svgIcon="android"></mat-icon>
+<!-- Icon button -->
+<button mat-icon-button>
+  <mat-icon svgIcon="android"></mat-icon>
+</button>
+<!-- You can also combine an icon and text together -->
+<button mat-button>
+  <mat-icon svgIcon="code-tags"></mat-icon>
+  View source
+</button>
+```
+
+5. Please also add the following class to your styles (styles.css) to solve the problem where an icon isn't aligned properly when used in a menu item:
+```
+button.mat-menu-item {
+  line-height: 24px !important;
+}
+a.mat-menu-item > mat-icon {
+  margin-bottom: 14px;
+}
+.mat-icon svg {
+  height: 24px;
+  width: 24px;
+}
 ```
