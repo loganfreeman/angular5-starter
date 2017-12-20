@@ -185,3 +185,9 @@ a.mat-menu-item > mat-icon {
   width: 24px;
 }
 ```
+
+flat-icons
+---
+[632,500 vector icons grouped in 11,945 packs](https://www.flaticon.com/)
+
+## free to download, you must credit the author
