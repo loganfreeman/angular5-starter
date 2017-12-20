@@ -4,13 +4,16 @@ Bug, feature request, or proposal:
 Feature request
 
 What is the expected behavior?
+
 A way to register and sanitize svg icons globally for use by all components.
 
 What is the current behavior?
+
 Currently following the demo at:
 https://github.com/angular/material2/tree/master/src/demo-app/icon
 
 Each component needs 2 imports:
+
 ```
 import {DomSanitizer} from '@angular/platform-browser';
 import {MdIconRegistry} from '@angular/material';
