@@ -191,3 +191,40 @@ flat-icons
 [632,500 vector icons grouped in 11,945 packs](https://www.flaticon.com/)
 
 ## free to download, you must credit the author
+
+Build your own collection with svg-icon
+---
+An ultimate svg icons collection DONE RIGHT, with over 10,000 SVG icons out of the box. 
+
+[svg-icon github](https://leungwensen.github.io/svg-icon/)
+
+Download
+
+```
+npm install svg-icon --save
+```
+
+Usage
+
+```
+<svg-icon url="http://leungwensen.github.io/svg-icon/dist/sprite/symbol/logos.svg" type="si-logos-javascript"></svg-icon>
+```
+
+## Build your own collection
+
+1. Install svg-icon via npm:
+```
+npm install svg-icon -g
+```
+2. Define a collection file (JSON format, [demo json](https://github.com/leungwensen/svg-icon/blob/master/src/collection/zfinder.json))
+3. Build it:
+```
+svg-icon build --source $path/to/icons.json --target $path/to/dest --name wow
+```
+4. Now you have a SVG sprite file and a demo page.
+```
+$path/to/dest/wow/
+    ├── index.html
+    └── svg-symbols.svg
+```
+
